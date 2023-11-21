@@ -7,7 +7,6 @@
 struct sp_t spec[] = {
 	{'c', print_character},
 	{'s', print_string},
-	{'%', print_percent},
 	{'\0', NULL}
 };
 
@@ -57,14 +56,13 @@ int _printf(const char *format, ...)
 			}
 			if (spec[i].c == '\0')
 			{
-				write(1, "%", 1);
-				write(1, format, 1);
+				_putchar(*format);
 			}
 		}
 		else
-			write(1, format, 1);
+			_putchar(*format);
 		format++;
-		j++; 
+		j++;
 	}
 	va_end(arg);
 	return(j);
