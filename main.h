@@ -7,6 +7,7 @@ struct sp_t {
 	int (*f)(va_list);
 };
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 int print_character(va_list arg);
 int print_string(va_list arg);
