@@ -4,35 +4,6 @@
 #include <unistd.h>
 #include "main.h"
 
-struct sp_t spec[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'%', print_percent},
-	{'\0', NULL}
-};
-
-/**
- * print_format - function to identify the specifier character
- * @specifier: the character specified
- * @arg: the structure that matches with the specifier
- * return: index of the specifier in the spec array
- *
- */
-int print_format(char specifier, va_list arg)
-{
-	int i = 0;
-
-	while (spec[i].c != '\0')
-	{
-		if (specifier == spec[i].c)
-		{
-			(spec[i].f(arg));
-			return (i);
-		}
-		i++;
-	}
-	return (i);
-}
 /**
  * _printf - custom printf
  * @format : the string character to print
@@ -44,6 +15,14 @@ int _printf(const char *format, ...)
 	va_list arg;
 	int j = 0;
 	int i;
+
+	struct sp_t spec[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'\0', NULL}
+	};
+
 	va_start(arg, format);
 
 	while (format != NULL && *format != '\0')
@@ -73,5 +52,5 @@ int _printf(const char *format, ...)
 		j++;
 	}
 	va_end(arg);
-	return(j);
+	return (j);
 }

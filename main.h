@@ -2,7 +2,14 @@
 #define MAIN_H
 #include <stdarg.h>
 
-struct sp_t {
+/**
+ * struct sp_t - structure
+ * @c: character to check
+ * @f: function pointer associated
+ */
+
+struct sp_t
+{
 	char c;
 	int (*f)(va_list);
 };
@@ -12,6 +19,6 @@ int _printf(const char *format, ...);
 int print_char(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list arg);
-int print_format(char specifier, va_list arg);
+/*int print_format(char specifier, va_list arg);*/
 
 #endif
