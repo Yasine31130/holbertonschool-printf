@@ -1,40 +1,50 @@
 #include "main.h"
-struct sp_t {
-	char c;
-	int (*f)(va_list);
-};
 /**
- * print_char - description
- * @c: char to print
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+/**
+ * print_character - description
+ * @arg: char to print
  * Return: charecter
  */
-int print_char(char c)
+int print_character(va_list arg)
 {
-	return(write(1, &c, 1));
+	char c = va_arg(list, int);
+
+	return (write(1, &c, 1));
 }
 /**
  * print_string - description
- * @str: string to print
- * Return: num of characters 
+ * @arg: string to print
+ * Return: num of characters
  */
-int print_string(char * str)
+int print_string(va_list arg)
 {
 	int count = 0;
 
 	while (str[count] != '\0')
 	{
-		print_char(str[count]);
+		print_character(str[count]);
 		count++;
 		return (count);
 	}
 }
 /**
  * print_percent - description
- * @list: next argument of va_list
+ * @arg: next argument of va_list
  * Return: charecter %
  */
-int print_percent(__attribute__((unused)) va_list list)
+int print_percent(va_list arg)
 {
-	print_char('%');
-	return (1);
+	va_arg(arg, int);
+	_putchar('%');
+	return (0);
 }
