@@ -5,10 +5,16 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
+/**
+ * struct sp_t - Description
+ * @c: char
+ * @f: function
+ * Description: Longer description
+ */
 struct sp_t
 {
-        char c;
-        int (*f)(va_list);
+	char c;
+	int (*f)(va_list);
 };
 int _putchar(char c);
 int print_character(va_list arg);
