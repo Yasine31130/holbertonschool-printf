@@ -32,11 +32,9 @@ int print_string(va_list arg)
 	}
 	return (count);
 }
-
-int print_r(va_list arg)
+int print_percent(va_list arg)
 {
 	va_arg(arg, int);
 	_putchar('%');
-	_putchar('r');
 	return(0);
 }

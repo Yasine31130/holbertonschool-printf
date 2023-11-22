@@ -7,7 +7,7 @@
 struct sp_t spec[] = {
 	{'c', print_char},
 	{'s', print_string},
-	{'r', print_r},
+	{'%', print_percent},
 	{'\0', NULL}
 };
 
@@ -63,6 +63,7 @@ int _printf(const char *format, ...)
 			}
 			if (spec[i].c == '\0')
 			{
+				_putchar('%');
 				_putchar(*format);
 			}
 		}
