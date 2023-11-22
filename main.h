@@ -10,6 +10,7 @@ struct sp_t
         char c;
         int (*f)(va_list);
 };
+int _putchar(char c);
 int print_character(va_list arg);
 int print_string(va_list arg);
 int print_percent(__attribute__((unused)) va_list arg);

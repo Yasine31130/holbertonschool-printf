@@ -17,7 +17,7 @@ int _putchar(char c)
  */
 int print_character(va_list arg)
 {
-	char c = va_arg(list, int);
+	char c = va_arg(arg, int);
 
 	return (write(1, &c, 1));
 }
@@ -28,14 +28,15 @@ int print_character(va_list arg)
  */
 int print_string(va_list arg)
 {
+	char *str = va_arg(arg, char *);
 	int count = 0;
 
 	while (str[count] != '\0')
 	{
-		print_character(str[count]);
+		write(1, &str[count], 1);
 		count++;
-		return (count);
 	}
+	return (count);
 }
 /**
  * print_percent - description
