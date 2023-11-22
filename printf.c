@@ -7,6 +7,7 @@
 struct sp_t spec[] = {
 	{'c', print_char},
 	{'s', print_string},
+	{'r', print_r},
 	{'\0', NULL}
 };
 
