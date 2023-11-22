@@ -13,7 +13,7 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int print_character(va_list arg)
+int print_char(va_list arg)
 {
 	char c = va_arg(arg, int);
 	return (write(1, &c, 1));
@@ -31,10 +31,4 @@ int print_string(va_list arg)
 		count++;
 	}
 	return (count);
-}
-
-int print_percent(va_list arg)
-{
-	print_character(arg);
-	return(1);
 }

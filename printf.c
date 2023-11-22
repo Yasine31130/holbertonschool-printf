@@ -5,11 +5,18 @@
 #include "main.h"
 
 struct sp_t spec[] = {
-	{'c', print_character},
+	{'c', print_char},
 	{'s', print_string},
 	{'\0', NULL}
 };
 
+/**
+ * print_format - function to identify the specifier character
+ * @specifier: the character specified
+ * @arg: the structure that matches with the specifier
+ * return: index of the specifier in the spec array
+ *
+ */
 int print_format(char specifier, va_list arg)
 {
 	int i = 0;
@@ -42,9 +49,8 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			format++;
 			i = 0;
-
+			format++;
 			while (spec[i].c != '\0')
 			{
 				if (*format == spec[i].c)
