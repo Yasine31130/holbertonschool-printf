@@ -11,6 +11,7 @@ int print_format(char specifier, va_list arg)
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percent},
+		{'d', print_digit},
 		{'\0', NULL}
 	};
 	int i = 0;
