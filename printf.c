@@ -1,19 +1,22 @@
 #include "main.h"
+
 /**
  * print_format - print the correct type of variable
  * @specifier: to compare
  * @arg: list of variables to print
  * Return: the number of character printed.
  */
+
 int print_format(char specifier, va_list arg)
 {
-	struct sp_t spec[] = {
+	int i = 0;
+
+	sp_t spec[] = {
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percent},
 		{'\0', NULL}
 	};
-	int i = 0;
 
 	while (spec[i].c != '\0')
 	{
