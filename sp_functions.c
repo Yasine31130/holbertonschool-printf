@@ -30,6 +30,9 @@ int print_string(va_list arg)
 {
 	char *str = va_arg(arg, char *);
 	int count = 0;
+	
+	if (str == NULL)
+		str = "(null)";
 
 	while (str[count] != '\0')
 	{
