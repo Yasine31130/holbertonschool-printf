@@ -56,14 +56,15 @@ int _printf(const char *format, ...)
 			if (*format != '\0')
 			{
 				i = print_format(*format, arg);
+				j += i;
 			}
 		}
 		else
 		{
 			_putchar(*format);
+			j++;
 		}
 		format++;
-		j += i;
 	}
 	va_end(arg);
 	return (j);

@@ -30,7 +30,7 @@ int print_string(va_list arg)
 {
 	char *str = va_arg(arg, char *);
 	int count = 0;
-
+	
 	while (str[count] != '\0')
 	{
 		write(1, &str[count], 1);
