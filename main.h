@@ -6,16 +6,16 @@
 #include <limits.h>
 #include <unistd.h>
 /**
- * struct sp_t - Description
+ * struct specifiers - Description
  * @c: char
  * @f: function
  * Description: Longer description
  */
-struct sp_t
+typedef struct specifiers
 {
 	char c;
 	int (*f)(va_list);
-};
+} sp_t;
 int _putchar(char c);
 int print_character(va_list arg);
 int print_string(va_list arg);
