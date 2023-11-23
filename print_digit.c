@@ -11,6 +11,8 @@ int print_digit(va_list arg)
 	int count = 0;
 	int temp;
 	int digit;
+	int num;
+	int i;
 
 	if (number < 0)
 	{
@@ -31,11 +33,10 @@ int print_digit(va_list arg)
 		digit = number % 10;
 		_putchar(digit + '0');
 		number /= 10;
-		count--;
 	}
 	return (count);
 }
 
-int print_octal_hexa(va_list arg)
-{
+/*int print_octal_hexa(va_list arg)
+{*/
 
