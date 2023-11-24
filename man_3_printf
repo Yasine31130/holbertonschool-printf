@@ -1,76 +1,55 @@
-.TH _PRINTF
+.TH _PRINTF 6 "HOLBERTOON_SCHOOL" "PRINTF_FUNCTION" "HOLBERTON SCHOOL PROGRAMMER MANUAL"
 .SH NAME
+_printf \- Format and print data
+.SH SYNOPSIS
+.B #include "main.h"
 
-	_printf
-
-SYNOPSIS
-
-	#include "main.h"
-	
-	int _printf(const char *format, ...);
-
-DESCRIPTION
-
-    The function "_printf" allows you to output according to the format. The printf function write the output on stdout, the standard flux output.
-This printf function is using a va_list to display a variadic number of arguments.
-
-	Returned value
-
-	In case of success, this function returns the number of printed characters (excluding the null byte used to end output to strings). In case of output error, a negativ value is returned.
-
-	Format string
-
-	The conversion format is indicated by a string of characters, starting and finishing in his initial gap state. Format string is composed of indicators : ordinary characters (different of %), that are copied without modification on the ouput, and converstion specifications, that are corresponding with following arguments. Conversion specifications are introduced by the character % and finish by a conversion indicator (specifier).
-
-	Conversion indicator
-
-	A character is indicating the conversion type to do. The indicators, and there meaning, are :
-
-	. d, i
-		The argument int is converted in a signed decimal number. 
-
-	. c
-		The argument integer, of type int, is converted in an unsigned char, et the corresponding character is display.
-
-	. s
-		The argument of type const char * is a pointeur on a string. Characters are written until this final byte ('\0'), excluded.
-
-	. %
-		A "%" character is written. There is no conversion. Complet indicator is "%%".
-
-EXAMPLES
-
-	To display a simple sentence :
-
-	#include "main.h"
-
-    	_printf("Let's try to printf a simple sentence.\n");
-
-	To display a character :
-	
-	_printf("Character:[%c]\n", 'H');
-
-	To dislpay a string :
-
-	_printf("String:[%s]\n", "I am a string !");
-
-	To display a decimal number :
-	
-	_printf("Length:[%d, %i]\n", 39, 39);
-	
-
-SEE ALSO
-
-    printf, sprintf, snprintf, vsprintf, vsnprintf, asprintf, dprintf, scanf, setlocale, wcrtomb, wprintf, locale
-
-BUGS
-
-	No bug to report for now.
-
-AUTHOR
-
-   This function has been produced by Yasine Benslika and Nathan Raynal during a group project for Holberton School (Toulouse) in 2023. 
-
-COPYRIGHT
-
-    Holberton School property. 
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+The function \fB_printf\fR allows you to output according to the format. The \fBprintf\fR function writes the output to \fIstdout\fR, the standard output stream. This \fBprintf\fR function uses a \fIva_list\fR to display a variadic number of arguments.
+.SS Returned value
+In case of success, this function returns the number of printed characters (excluding the null byte used to end output to strings). In case of an output error, a negative value is returned.
+.SS Format string
+The conversion format is indicated by a string of characters, starting and finishing in its initial gap state. The format string is composed of ordinary characters (different from %), which are copied without modification to the output, and conversion specifications, which correspond to the following arguments. Conversion specifications are introduced by the character % and end with a conversion indicator (specifier).
+.SS Conversion indicator
+A character indicates the conversion type to perform. The indicators and their meanings are:
+.IP \[bu] 2
+\fBd, i\fR
+The argument \fIint\fR is converted to a signed decimal number.
+.IP \[bu] 2
+\fBc\fR
+The argument \fIinteger\fR, of type \fIint\fR, is converted to an unsigned char, and the corresponding character is displayed.
+.IP \[bu] 2
+\fBs\fR
+The argument of type \fIconst char *\fR is a pointer to a string. Characters are written until the null byte ('\0'), excluded.
+.IP \[bu] 2
+\fB%\fR
+A "%" character is written. There is no conversion. The complete indicator is "%%".
+.SH EXAMPLES
+.EX
+To display a simple sentence:
+.B
+#include "main.h"
+.B
+_printf("Let's try to printf a simple sentence.\n");
+.PP
+To display a character:
+.B
+_printf("Character:[%c]\n", 'H');
+.PP
+To display a string:
+.B
+_printf("String:[%s]\n", "I am a string !");
+.PP
+To display a decimal number:
+.B
+_printf("Length:[%d, %i]\n", 39, 39);
+.EE
+.SH SEE ALSO
+\fIprintf\fR(3), \fIsprintf\fR(3), \fIsnprintf\fR(3), \fIvsprintf\fR(3), \fIvsnprintf\fR(3), \fIasprintf\fR(3), \fIdprintf\fR(3), \fIscanf\fR(3), \fIsetlocale\fR(3), \fIwcrtomb\fR(3), \fIwprintf\fR(3), \fIlocale\fR(7)
+.SH BUGS
+No bugs to report at the moment.
+.SH AUTHOR
+This function was produced by Yasine Benslika and Nathan Raynal during a group project for Holberton School (Toulouse) in 2023.
+.SH COPYRIGHT
+Holberton School property.
