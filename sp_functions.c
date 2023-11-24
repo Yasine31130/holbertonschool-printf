@@ -11,18 +11,19 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
- * print_character - description
+ * print_character - function to print a char arg from the va_list
  * @arg: char to print
- * Return: charecter
+ * Return: the number of character (1)
  */
 int print_character(va_list arg)
 {
 	char c = va_arg(arg, int);
 
-	return (write(1, &c, 1));
+	_putchar(c);
+	return (1);
 }
 /**
- * print_string - description
+ * print_string - function to print a string. If NULL, print (null).
  * @arg: string to print
  * Return: num of characters
  */
@@ -36,19 +37,18 @@ int print_string(va_list arg)
 
 	while (str[count] != '\0')
 	{
-		write(1, &str[count], 1);
+		_putchar(str[count]);
 		count++;
 	}
 	return (count);
 }
 /**
- * print_percent - description
- * @arg: next argument of va_list
- * Return: charecter %
+ * print_percent - print a percent character
+ * @arg: link to the va_list
+ * Return: 1 (number of character)
  */
-int print_percent(va_list arg)
+int print_percent(__attribute__((unused)) va_list arg)
 {
-	va_arg(arg, int);
 	_putchar('%');
 	return (1);
 }

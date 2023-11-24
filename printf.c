@@ -9,29 +9,32 @@
 int print_format(char specifier, va_list arg)
 {
 	sp_t spec[] = {
-		{'c', print_character},
-		{'s', print_string},
-		{'%', print_percent},
-		{'d', print_digit},
-		{'i', print_digit},
-		{'\0', NULL}
+		{"c", print_character},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_digit},
+		{"i", print_digit},
+		{NULL, NULL}
 	};
-	int i = 0;
-	int j = 0;
+	unsigned int i = 0;
+	int counter = 0;
 
-	while (spec[i].c != '\0')
+	while (spec[i].c != NULL)
 	{
-		if (specifier == spec[i].c)
+		if (specifier == *spec[i].c)
 		{
-			j += spec[i].f(arg);
-			return (j);
+			counter += spec[i].f(arg);
+			return (counter);
 		}
 		i++;
 	}
-	if (spec[i].c == '\0')
+	if (spec[i].c == NULL)
 	{
 		_putchar('%');
+		counter++;
 		_putchar(specifier);
+		counter++;
+		return (counter);
 	}
 	return (-1);
 }
@@ -43,34 +46,31 @@ int print_format(char specifier, va_list arg)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int j = 0;
+	int count = 0;
+	int i = 0;
 
 	va_start(arg, format);
-	if (format == NULL)
+	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
-	if (*format == '\0')
-
-		return (j);
 
 	while (format != NULL && *format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
-				return (-1);
+
 			if (*format != '\0')
 			{
-				j += print_format(*format, arg);
+				count += print_format(*format, arg);
 			}
 		}
 		else
 		{
 			_putchar(*format);
-			j++;
+			count++;
 		}
 		format++;
 	}
 	va_end(arg);
-	return (j);
+	return (count);
 }

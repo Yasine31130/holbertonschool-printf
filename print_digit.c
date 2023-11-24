@@ -8,7 +8,7 @@
 
 int print_digit(va_list arg)
 {
-	int number = va_arg(arg,int);
+	int number = va_arg(arg, int);
 	int count = 0;
 	int temp;
 	int digit = 1;
