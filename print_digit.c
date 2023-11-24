@@ -8,19 +8,20 @@
 
 int print_digit(va_list arg)
 {
-	int number = va_arg(arg, int);
+	int number = va_arg(arg,int);
 	int count = 0;
 	int temp;
 	int digit = 1;
+	unsigned int min = number;
 
 	if (number < 0)
 	{
 		_putchar('-');
 		count++;
-		number *= -1;
+		min *= -1;
 	}
 
-	temp = number;
+	temp = min;
 
 	while (temp / 10 != 0)
 	{
@@ -29,8 +30,8 @@ int print_digit(va_list arg)
 	}
 	while (digit != 0)
 	{
-		_putchar((number / digit) + '0');
-		number %= digit;
+		_putchar((min / digit) + '0');
+		min %= digit;
 		digit /= 10;
 		count++;
 	}
