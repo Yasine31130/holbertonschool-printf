@@ -24,7 +24,7 @@ int print_format(char specifier, va_list arg)
 		if (specifier == spec[i].c)
 		{
 			j += spec[i].f(arg);
-			return(j);
+			return (j);
 		}
 		i++;
 	}
@@ -33,7 +33,7 @@ int print_format(char specifier, va_list arg)
 		_putchar('%');
 		_putchar(specifier);
 	}
-	return (j);
+	return (-1);
 }
 /**
  * _printf - custom printf
