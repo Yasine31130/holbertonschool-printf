@@ -1,10 +1,17 @@
 #include "main.h"
 
 /**
+<<<<<<< HEAD
  * print_digit - description
  * @arg: int to print
  * Return: num of digits
  */
+=======
+ *
+ *
+ */
+
+>>>>>>> NathanRaynal
 int print_digit(va_list arg)
 {
 	int number = va_arg(arg, int);
@@ -16,7 +23,11 @@ int print_digit(va_list arg)
 	{
 		_putchar('-');
 		count++;
+<<<<<<< HEAD
 		number = -number;
+=======
+		number *= -1;
+>>>>>>> NathanRaynal
 	}
 
 	temp = number;
@@ -35,6 +46,7 @@ int print_digit(va_list arg)
 	}
 	return (count);
 }
+<<<<<<< HEAD
 /**
  * print_recursive_digit - description
  * @number: int to print
@@ -81,3 +93,5 @@ int print_integer_10(va_list arg)
 	}
 	return (count);
 }
+=======
+>>>>>>> NathanRaynal
