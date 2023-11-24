@@ -16,7 +16,7 @@ int print_digit(va_list arg)
 	{
 		_putchar('-');
 		count++;
-		number = -number;
+		number *= -1;
 	}
 
 	temp = number;
@@ -32,44 +32,6 @@ int print_digit(va_list arg)
 		number %= digit;
 		digit /= 10;
 		count++;
-	}
-	return (count);
-}
-
-int print_recursive_digit(int number)
-{
-	int count = 0;
-	int digit;
-
-	if (number != 0)
-	{
-		digit = number % 10;
-		count += print_recursive_digit(number / 10);
-		_putchar(digit + '0');
-		count++;
-	}
-	return (count);
-}
-
-int print_integer_10 (va_list arg)
-{
-	int number = va_arg(arg, int);
-	int count = 0;
-
-	if (number < 0)
-	{
-		_putchar('-');
-		count++;
-		number = -number;
-	}
-	if (number == 0)
-	{
-		_putchar('0');
-		count++;
-	}
-	else
-	{
-		count += print_recursive_digit(number);
 	}
 	return (count);
 }

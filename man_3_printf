@@ -1,0 +1,76 @@
+.TH _PRINTF
+.SH NAME
+
+	_printf
+
+SYNOPSIS
+
+	#include "main.h"
+	
+	int _printf(const char *format, ...);
+
+DESCRIPTION
+
+    The function "_printf" allows you to output according to the format. The printf function write the output on stdout, the standard flux output.
+This printf function is using a va_list to display a variadic number of arguments.
+
+	Returned value
+
+	In case of success, this function returns the number of printed characters (excluding the null byte used to end output to strings). In case of output error, a negativ value is returned.
+
+	Format string
+
+	The conversion format is indicated by a string of characters, starting and finishing in his initial gap state. Format string is composed of indicators : ordinary characters (different of %), that are copied without modification on the ouput, and converstion specifications, that are corresponding with following arguments. Conversion specifications are introduced by the character % and finish by a conversion indicator (specifier).
+
+	Conversion indicator
+
+	A character is indicating the conversion type to do. The indicators, and there meaning, are :
+
+	. d, i
+		The argument int is converted in a signed decimal number. 
+
+	. c
+		The argument integer, of type int, is converted in an unsigned char, et the corresponding character is display.
+
+	. s
+		The argument of type const char * is a pointeur on a string. Characters are written until this final byte ('\0'), excluded.
+
+	. %
+		A "%" character is written. There is no conversion. Complet indicator is "%%".
+
+EXAMPLES
+
+	To display a simple sentence :
+
+	#include "main.h"
+
+    	_printf("Let's try to printf a simple sentence.\n");
+
+	To display a character :
+	
+	_printf("Character:[%c]\n", 'H');
+
+	To dislpay a string :
+
+	_printf("String:[%s]\n", "I am a string !");
+
+	To display a decimal number :
+	
+	_printf("Length:[%d, %i]\n", 39, 39);
+	
+
+SEE ALSO
+
+    printf, sprintf, snprintf, vsprintf, vsnprintf, asprintf, dprintf, scanf, setlocale, wcrtomb, wprintf, locale
+
+BUGS
+
+	No bug to report for now.
+
+AUTHOR
+
+   This function has been produced by Yasine Benslika and Nathan Raynal during a group project for Holberton School (Toulouse) in 2023. 
+
+COPYRIGHT
+
+    Holberton School property. 
