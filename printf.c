@@ -17,14 +17,14 @@ int print_format(char specifier, va_list arg)
 		{'\0', NULL}
 	};
 	int i = 0;
-	int j;
+	int j = 0;
 
 	while (spec[i].c != '\0')
 	{
 		if (specifier == spec[i].c)
 		{
-			j = spec[i].f(arg);
-			break;
+			j += spec[i].f(arg);
+			return(j);
 		}
 		i++;
 	}
