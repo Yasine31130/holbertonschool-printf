@@ -30,8 +30,7 @@ int main(void)
 
     return 0;
 }
-## Usage
-
+```
 ### Compilation
 ``` bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
