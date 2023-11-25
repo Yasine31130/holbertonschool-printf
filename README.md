@@ -12,8 +12,8 @@ The project includes a set of functions to handle different format specifiers, s
 - `print_character`: Implementation of the function to print characters.
 - `print_percent`: Implementation of the function to print percent signs.
 - `print_digit`: Implementation of the function to print integers.
-- `printf.c`: Implementation of the main `_printf` function.
-- `sp_functions.c`: Implementation of supporting functions for various specifiers.
+- `_printf`: Implementation of the main `_printf` function.
+- `sp_functions`: Implementation of supporting functions for various specifiers.
 - `man_3_printf`: Manual page for the custom `printf` function.
 
 ## Usage
