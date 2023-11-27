@@ -65,7 +65,7 @@ _printf("This is a 100%% accurate statement.\n");
 
 ## Flowchart
 
-![Image]()
+![Image](https://github.com/Yasine31130/holbertonschool-printf/blob/main/Flowchart.png)
 
 ## Authors
 
