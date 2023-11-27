@@ -54,7 +54,7 @@ _printf("Welcome to %s!\n", "Holberton School");
 ----------
 Printing an integer:
 ```
-_printf("The square root of %d is %f.\n", 25, 5.0);
+_printf("The result of 5 x 5 = %d.\n", 25);
 ```
 ----------
 Printing a percent sign:
