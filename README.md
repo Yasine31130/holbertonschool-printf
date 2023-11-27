@@ -63,6 +63,10 @@ _printf("This is a 100%% accurate statement.\n");
 ```
 ----------
 
+## Flowchart
+
+![Image]()
+
 ## Authors
 
 - Nathan Raynal
