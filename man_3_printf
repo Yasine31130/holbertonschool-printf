@@ -53,3 +53,6 @@ No bugs to report at the moment.
 This function was produced by Yasine Benslika and Nathan Raynal during a group project for Holberton School (Toulouse) in 2023.
 .SH COPYRIGHT
 Holberton School property.
+.PP
+.nr y 1900+\n(yr
+Date is: \n(mo  \n(dy, \ny
